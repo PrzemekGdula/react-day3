@@ -10,8 +10,9 @@ class Counter extends React.Component {
     }
 
     render() {
-        const inc = () => this.state.number = this.state.number + 1
+        const inc = () => this.setState({ number: this.state.number +1})
             
+        console.log(this.state.number)
         
 
         return (
