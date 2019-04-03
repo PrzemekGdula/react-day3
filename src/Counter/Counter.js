@@ -7,15 +7,14 @@ class Counter extends React.Component {
         this.state = {
             number: 10,
         }
+
+        this.inc = this.inc.bind(this)
     }
     inc() {
         this.setState({ number: this.state.number + 1 })
     }
 
     render() {
-
-
-
         return (
             <div>
                 <h1>
@@ -23,7 +22,7 @@ class Counter extends React.Component {
                 </h1>
 
                 <button
-                    onClick={this.inc.bind(this)}
+                    onClick={this.inc}
                 >
                     +
                 </button>
