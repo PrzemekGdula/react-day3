@@ -1,4 +1,5 @@
 import React from 'react'
+import { setInterval } from 'timers';
 
 class Lifecycle extends React.Component {
 
@@ -8,6 +9,7 @@ class Lifecycle extends React.Component {
         super()
 
         this.state = {
+            time: (new Date()).toLocaleString(),
             number: 0,
         }
 
@@ -20,6 +22,11 @@ class Lifecycle extends React.Component {
     }
 
     componentDidMount() {
+        setInterval(
+            () => this.setState({ time: (new Date()).toLocaleString() }),
+            1000
+        )
+
         console.log('componentDidMount')
         console.log('--- ---- --- --- --- ---')
     }
@@ -64,8 +71,13 @@ class Lifecycle extends React.Component {
 
         return (
             <div>
-                Lifecycle
-        <button
+                <div>
+                    {this.state.time}
+                </div>
+                <div>
+                    Lifecycle
+        </div>
+                <button
                     onClick={() => this.setState({ number: this.state.number + 1 })}
                 >
                     Change state!
@@ -74,4 +86,5 @@ class Lifecycle extends React.Component {
         )
     }
 }
+
 export default Lifecycle
