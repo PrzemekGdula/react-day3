@@ -1,5 +1,4 @@
 import React from 'react'
-import { setInterval } from 'timers';
 
 class Lifecycle extends React.Component {
 
@@ -12,6 +11,7 @@ class Lifecycle extends React.Component {
             time: (new Date()).toLocaleString(),
             number: 0,
         }
+        this.intervalId = null
 
         console.log('constructor')
     }
@@ -22,8 +22,11 @@ class Lifecycle extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(
-            () => this.setState({ time: (new Date()).toLocaleString() }),
+        this.intervalId = setInterval(
+            () => {
+                console.log('#### interval')
+                this.setState({ time: (new Date()).toLocaleString() })
+            },
             1000
         )
 
@@ -61,6 +64,10 @@ class Lifecycle extends React.Component {
     // UN-MOUNTING
 
     componentWillUnmount() {
+        // good place to clean up!
+
+        clearInterval(this.intervalId)
+
         console.log('componentWillUnmount')
     }
 
