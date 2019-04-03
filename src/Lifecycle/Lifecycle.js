@@ -1,13 +1,21 @@
 import React from 'react'
 
 class Lifecycle extends React.Component {
-    constructor(){
+    constructor() {
         super()
+
+        this.state = {
+            number: 0,
+        }
 
         console.log('constructor')
     }
 
-    componentDidMount () {
+    componentWillMount() {
+        console.log('componentWillMount')
+    }
+    //deprecated
+    componentDidMount() {
         console.log('componentDidMount')
     }
     render() {
@@ -15,6 +23,10 @@ class Lifecycle extends React.Component {
         return (
             <div>
                 Lifecycle
+                <button
+                    onClick={() => this.setState({ number: this.state.number + 1 })}>
+                    Change state!
+                </button>
             </div>
         )
     }
