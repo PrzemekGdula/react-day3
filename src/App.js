@@ -3,7 +3,7 @@ import Counter from './Counter'
 
 const App = (props) => (
     <div>
-        <Counter />
+        <Counter number={5}/>
     </div>
 )
 

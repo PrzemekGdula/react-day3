@@ -4,9 +4,11 @@ class Counter extends React.Component {
 
     state = {
         number: 10,
-        }
+    }
 
     inc = () => this.setState({ number: this.state.number + 1 })
+    dec = () => this.setState({ number: this.state.number - 1 })
+    reset = () => this.setState({ number: 10 })
 
 
 
@@ -22,6 +24,17 @@ class Counter extends React.Component {
                 >
                     +
                 </button>
+                <button
+                    onClick={this.dec}
+                >
+                    -
+                </button>
+                <button
+                    onClick={this.reset}
+                >
+                    reset
+                </button>
+
             </div>
         )
     }
