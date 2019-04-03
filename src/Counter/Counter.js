@@ -1,14 +1,11 @@
 import React from 'react'
 
 class Counter extends React.Component {
-    constructor() {
-        super()
 
-        this.state = {
-            number: 10,
+    state = {
+        number: 10,
         }
 
-    }
     inc = () => this.setState({ number: this.state.number + 1 })
 
 
