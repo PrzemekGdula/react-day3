@@ -1,16 +1,19 @@
 import React from 'react'
 
-const Counter = (props) => (
+class Counter extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>
+                    0
+            </h1>
 
-    <div>
-<h1>
-    0
-</h1>
-
-<button>
-    +
-</button>
-    </div>
-)
+                <button>
+                    +
+            </button>
+            </div>
+        )
+    }
+}
 
 export default Counter
