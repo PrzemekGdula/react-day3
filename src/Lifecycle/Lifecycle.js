@@ -10,15 +10,31 @@ class Lifecycle extends React.Component {
 
         console.log('constructor')
     }
-
+    //deprecated
     componentWillMount() {
         console.log('componentWillMount')
     }
     //deprecated
     componentDidMount() {
         console.log('componentDidMount')
+        console.log('...................')
+    }
+    //deprecated
+    componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps')
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate')
+
+        console.log('Current props ', this.props)
+        console.log('Next props ', nextProps)
+        console.log('Current state ', this.state)
+        console.log('Next state ', nextState)
+
+        return true
+    }
+    //deprecated
     componentWillUpdate() {
         console.log('componentWillUpdate')
     }
