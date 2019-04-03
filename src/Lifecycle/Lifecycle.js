@@ -18,6 +18,15 @@ class Lifecycle extends React.Component {
     componentDidMount() {
         console.log('componentDidMount')
     }
+
+    componentWillUpdate() {
+        console.log('componentWillUpdate')
+    }
+
+    componentDidUpdate() {
+        console.log('componentDidUpdate')
+    }
+
     render() {
         console.log('render')
         return (
