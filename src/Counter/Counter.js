@@ -3,12 +3,12 @@ import React from 'react'
 class Counter extends React.Component {
 
     state = {
-        number: 10,
+        number: this.props.number || 0
     }
 
     inc = () => this.setState({ number: this.state.number + 1 })
     dec = () => this.setState({ number: this.state.number - 1 })
-    reset = () => this.setState({ number: 10 })
+    reset = () => this.setState({ number: this.props.number || 0 })
 
 
 
