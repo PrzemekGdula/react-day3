@@ -1,6 +1,9 @@
 import React from 'react'
 
 class Lifecycle extends React.Component {
+
+    // MOUNTING
+
     constructor() {
         super()
 
@@ -10,16 +13,20 @@ class Lifecycle extends React.Component {
 
         console.log('constructor')
     }
-    //deprecated
+
+    //  deprecated!
     componentWillMount() {
         console.log('componentWillMount')
     }
-    //deprecated
+
     componentDidMount() {
         console.log('componentDidMount')
-        console.log('...................')
+        console.log('--- ---- --- --- --- ---')
     }
-    //deprecated
+
+    // UPDATING
+
+    //  deprecated!
     componentWillReceiveProps(nextProps) {
         console.log('componentWillReceiveProps')
     }
@@ -34,7 +41,8 @@ class Lifecycle extends React.Component {
 
         return true
     }
-    //deprecated
+
+    //  deprecated!
     componentWillUpdate() {
         console.log('componentWillUpdate')
     }
@@ -43,18 +51,27 @@ class Lifecycle extends React.Component {
         console.log('componentDidUpdate')
     }
 
+    // UN-MOUNTING
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount')
+    }
+
+    // MOUNTING & UPDATING
+
     render() {
         console.log('render')
+
         return (
             <div>
                 Lifecycle
-                <button
-                    onClick={() => this.setState({ number: this.state.number + 1 })}>
+        <button
+                    onClick={() => this.setState({ number: this.state.number + 1 })}
+                >
                     Change state!
-                </button>
+        </button>
             </div>
         )
     }
 }
-
 export default Lifecycle
